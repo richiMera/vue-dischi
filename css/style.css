@@ -25,14 +25,17 @@ body {
 }
 .header img {
   width: 50px;
+  cursor: pointer;
 }
 select {
-  width: 100px;
+  width: 200px;
   height: 30px;
   outline: none;
 }
+
 option {
   font-size: 20px;
+  outline: none;
 }
 
 .wrapper {
@@ -74,5 +77,6 @@ option {
   text-align: center
 }
 .card_box_footer p {
-  color: 
+  font-weight: 700;
+  color: #383838;
 }
