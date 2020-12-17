@@ -13,6 +13,7 @@ var app = new Vue({
 
   methods: {
     orderForYears: function ( a, b ) {
+    
       if ( a.year < b.year ){
         return -1;
       }
@@ -21,7 +22,6 @@ var app = new Vue({
       }
       return 0;
     }
-
 
   },
   mounted: function() {
