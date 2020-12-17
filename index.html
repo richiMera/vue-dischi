@@ -15,7 +15,9 @@
   <body>
     <div id="root">
       <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png" alt="">
         <select class="" name="" v-model="selected">
+          <option value="">All</option>
           <option v-for="genre in genres" v-model="genre">{{genre}}</option>
         </select>
       </div>

@@ -7,14 +7,22 @@ var app = new Vue({
     genres: [],
     selected: "",
     genreValue: "",
-    
+
 
   },
 
   methods: {
-    chooseGenre: function() {
-
+    orderForYears: function ( a, b ) {
+      if ( a.year < b.year ){
+        return -1;
+      }
+      if ( a.year > b.year ){
+        return 1;
+      }
+      return 0;
     }
+
+
   },
   mounted: function() {
     var self = this;
@@ -22,15 +30,17 @@ var app = new Vue({
     .get("https://flynn.boolean.careers/exercises/api/array/music")
     .then(function (result) {
 
-      self.discs = result.data.response
-      console.log(result.data.response);
+      self.discs = result.data.response;
+      self.discs.sort(self.orderForYears)
+      console.log(self.discs);
 
       result.data.response.forEach(
         (element) => {
           if(!self.genres.includes(element.genre))
           self.genres.push(element.genre)
       });
-      console.log(self.genres);
+      self.genres.sort();
+
 
     });
 
